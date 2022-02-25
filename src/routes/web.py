@@ -6,15 +6,15 @@ web_routes = Blueprint('web', __name__)
 
 @web_routes.route('/connexion', methods=['GET'])
 def connexion():
-    return render_template('connexion.html')
+    return render_template('clients.html')
 
 @web_routes.route('/inscription', methods=['GET'])
 def inscription():
-    return render_template('inscription.html')   
+    return render_template('commandes.html')   
 
 @web_routes.route('/inscriptionfini', methods=['PUT'])
 def inscriptionfini():
-    return render_template('inscriptionfini.html')   
+    return render_template('index.html')   
 
 # @web_routes.route('/test', methods=['GET'])
 # def tests():
