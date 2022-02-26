@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  mysql:
+    container_name: "db"
+    build: ./db
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_DATABASE=bdd_projet 
+      - MYSQL_ROOT_PASSWORD=root
+
+  src:
+    container_name: "src_projet"
+    build: ./src
+    restart: always
+    ports:
+      - "3308:8081"
+    depends_on:
+      - mysql
+
+  adminer:
+    container_name: "adminer"
+    image: adminer:4.8.1
+    restart: always
+    ports:
+      - "3309:8080"
