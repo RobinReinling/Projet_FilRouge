@@ -8,11 +8,16 @@ services:
     ports:
       - 3307:3306
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=bdd_projet
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+
   api:
-    build: ./src/
+    image: projet/api
+    build: .
     container_name: api_projet
     ports:
-      - 85:5000
+      - 7500:80
+    environment:
+      - FLASK_APP=${FLASK_APP}
+      - DB_STRING=${DB_STRING}
       
