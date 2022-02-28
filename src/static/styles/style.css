@@ -9,10 +9,10 @@ html{
 }
 
 body {
-    background: rgb(23, 23, 23);
+    background: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
-    background: url('https://babymeetstheworld.com/wp-content/uploads/2018/07/FREELANCE.jpg');
+    background: url('http://www.artsbeauxgrimpeurs.net/image/foretlumdown.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -27,7 +27,7 @@ body {
 h1 {
     text-transform: uppercase;
     font-size: 100px;
-    color: #131313;
+    color: #ffffff;
     font-family: Abril fatface, sans-serif;
 }
 h1 span {
@@ -39,11 +39,11 @@ h1 span {
     top: 50px;
 }
 .btn-first {
-    border: 2px solid #000000;
+    border: 2px solid #ffffff;
     background: transparent;
     font-size: 30px;
     padding: 20px;
-    color: #1f1f1f;
+    color: #ffffff;
     cursor: pointer;
     justify-content: center;
 }
@@ -52,8 +52,8 @@ h1 span {
 }
 .btn-first:hover {
     transition: all 0.3s ease-in-out;
-    background: #fefefe;
-    color: #333;
+    background: #3c3c3ca5;
+    color: #ffffff;
 }
 .lignes {
     position: absolute;
@@ -63,13 +63,13 @@ h1 span {
 .l1 {
     width: 250px;
     height: 3px;
-    background: #1f1f1f;
+    background: #ffffff;
     border-radius: 5px;
 }
 .l2 {
     width: 140px;
     height: 3px;
-    background: #1f1f1f;
+    background: #ffffff;
     border-radius: 5px;
     position: relative;
     top: 20px;
@@ -111,8 +111,4 @@ h1 span {
 .logo-medias {
     width: 40px;
     height: 40px;
-}
-
-.backgroundred{
-    background-color: blue;
 }
