@@ -26,15 +26,16 @@ CREATE TABLE `employe` (
   `Nom` varchar(45) NOT NULL,
   `Prenom` varchar(45) NOT NULL,
   `Adresse_mail` varchar(45) NOT NULL,
-  `id_employe` varchar(45) NOT NULL,
+  `id_employe` int NOT NULL AUTO_INCREMENT,
   `questionnaire_idquestionnaire` int NOT NULL,
   `organisation_groupe` varchar(45) NOT NULL,
+  `Password` varchar(45) NOT NULL,
   PRIMARY KEY (`id_employe`,`organisation_groupe`),
   KEY `fk_employe_questionnaire1_idx` (`questionnaire_idquestionnaire`),
   KEY `fk_employe_organisation1_idx` (`organisation_groupe`),
   CONSTRAINT `fk_employe_organisation1` FOREIGN KEY (`organisation_groupe`) REFERENCES `organisation` (`groupe`),
   CONSTRAINT `fk_employe_questionnaire1` FOREIGN KEY (`questionnaire_idquestionnaire`) REFERENCES `questionnaire` (`idquestionnaire`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +44,7 @@ CREATE TABLE `employe` (
 
 LOCK TABLES `employe` WRITE;
 /*!40000 ALTER TABLE `employe` DISABLE KEYS */;
+INSERT INTO `employe` VALUES ('Reinling','Robin','ouioui@gmail.com',1,1,'1','ouioui'),('Sourisse','Robin','nonnon@gmail.com',2,1,'1','nonnon');
 /*!40000 ALTER TABLE `employe` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,13 +56,14 @@ DROP TABLE IF EXISTS `manager`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `manager` (
-  `id_manager` int NOT NULL,
+  `id_manager` int NOT NULL AUTO_INCREMENT,
   `Nom` varchar(45) DEFAULT NULL,
   `Prenom` varchar(45) DEFAULT NULL,
   `adresse_mail` varchar(45) DEFAULT NULL,
   `organisation_groupe` varchar(45) NOT NULL,
   `questionnaire_idquestionnaire` int NOT NULL,
   `questionnaire_resultat_questionnaire_id_result_questionnaire` int NOT NULL,
+  `Password` varchar(45) NOT NULL,
   PRIMARY KEY (`id_manager`,`organisation_groupe`),
   KEY `fk_manager_organisation1_idx` (`organisation_groupe`),
   KEY `fk_manager_questionnaire1_idx` (`questionnaire_idquestionnaire`,`questionnaire_resultat_questionnaire_id_result_questionnaire`),
@@ -102,6 +105,7 @@ CREATE TABLE `organisation` (
 
 LOCK TABLES `organisation` WRITE;
 /*!40000 ALTER TABLE `organisation` DISABLE KEYS */;
+INSERT INTO `organisation` VALUES ('1','tropfort','9 rue du ouioui',1);
 /*!40000 ALTER TABLE `organisation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,6 +133,7 @@ CREATE TABLE `questionnaire` (
 
 LOCK TABLES `questionnaire` WRITE;
 /*!40000 ALTER TABLE `questionnaire` DISABLE KEYS */;
+INSERT INTO `questionnaire` VALUES (1,'1','ouioui',1);
 /*!40000 ALTER TABLE `questionnaire` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -153,6 +158,7 @@ CREATE TABLE `resultat_questionnaire` (
 
 LOCK TABLES `resultat_questionnaire` WRITE;
 /*!40000 ALTER TABLE `resultat_questionnaire` DISABLE KEYS */;
+INSERT INTO `resultat_questionnaire` VALUES (2,2,1);
 /*!40000 ALTER TABLE `resultat_questionnaire` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -165,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-24 15:07:31
+-- Dump completed on 2022-03-11 15:07:42
