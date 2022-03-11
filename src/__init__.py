@@ -1,3 +1,4 @@
+from click import echo
 from flask import Flask, jsonify, render_template, request, redirect, url_for, session 
 from flask_mysqldb import MySQL 
 from flask_mysqldb import MySQL 
@@ -25,13 +26,11 @@ def init_app() -> Flask:
           cursor.execute('SELECT * FROM employe WHERE Adresse_mail = % s AND Password = % s', (email, password, )) 
           account = cursor.fetchone() 
           if account: 
-            session['loggedin'] = True
-            session['id'] = account['id'] 
-            session['Nom'] = account['Nom'] 
-            return render_template('index.html') 
+            msg = "ça fonctionne ma gueule"
+            return render_template('login.html', msg = msg) 
           else: 
-            return render_template('index.html')
-        # return render_template('index.html')
+            print("ça fonctionne pas du con")
+        return render_template('index.html')
 
 #   page d'inscription du site
     @app.route("/inscription")
