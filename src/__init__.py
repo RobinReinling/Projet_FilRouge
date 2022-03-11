@@ -1,12 +1,46 @@
-from flask import Flask, render_template,jsonify
+from flask import Flask, jsonify, render_template, request, redirect, url_for, session 
+from flask_mysqldb import MySQL 
+from flask_mysqldb import MySQL 
+import MySQLdb.cursors 
+import re
 # from sqlalchemy import create_engine
 
 def init_app() -> Flask:
     app = Flask(__name__)
 
+    app.config['MYSQL_HOST'] = 'localhost'
+    app.config['MYSQL_USER'] = 'root'
+    app.config['MYSQL_PASSWORD'] = 'root'
+    app.config['MYSQL_DB'] = 'bdd_projet'
 
-    @app.route("/")
+    mysql = MySQL(app) 
+
+#   page d'accueil du site permettant de ce connecter
+    @app.route("/accueil", methods =['GET', 'POST'])
     def index():
-        return render_template('index.html')
-    
+        if request.method == 'POST' and 'email' in request.form and 'password' in request.form: 
+          email = request.form['email'] 
+          password = request.form['password'] 
+          cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+          cursor.execute('SELECT * FROM employe WHERE Adresse_mail = % s AND Password = % s', (email, password, )) 
+          account = cursor.fetchone() 
+          if account: 
+            session['loggedin'] = True
+            session['id'] = account['id'] 
+            session['Nom'] = account['Nom'] 
+            return render_template('index.html') 
+          else: 
+            return render_template('index.html')
+        # return render_template('index.html')
+
+#   page d'inscription du site
+    @app.route("/inscription")
+    def inscription():
+        return render_template('inscription.html')
+
+#   page de questionnaire du site avec toute les questions
+    @app.route("/questionnaire")
+    def questionnaire():
+        return render_template('questionnaire.html')
+
     return app

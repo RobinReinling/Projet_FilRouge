@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+
+<body>
+    <form>
+        <div align="center">
+           <a href="{{url_for('index')}}">Revenir à la page de connexion</a>
+        </div>
+     
+        <h1>Formulaire d'inscription</h1>
+        <p class="choose-email">Pour accéder au site, veuillez remplir le formulaire ci dessous : </p>
+
+        
+        <div class="inputs">
+          <input type="prenom" id="prenom" placeholder="Votre prénom*">
+          <input type="Nom" id="nom" placeholder="Votre nom*">
+          <input type="email" id="email" placeholder="Email*">
+          <input type="telephone" id="telephone" placeholder="06 XX XX XX XX">
+          <input type="entreprise" id="entreprie" placeholder="Nom de votre société*">
+          <input type="pays" id="pays" placeholder="Pays*">
+          <input type="password" id="password" placeholder="Mot de passe*">
+          <input type="password" id="confpassword" placeholder="Confirmez votre mot de passe*">
+        </div>
+        <p class="champs">* : champs obligatoire </p>
+
+        
+
+        <div align="center">
+          <button type="submit">Je crée mon compte</button>
+        </div>
+    </form>
+    
+</body>
+</html>

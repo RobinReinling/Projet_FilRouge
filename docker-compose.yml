@@ -21,6 +21,6 @@ services:
       - FLASK_APP=${FLASK_APP}
       - DB_STRING=${DB_STRING}
 
-  keycloak:
-    build: ./keycloak
-    container_name: keycloak_projet
+  # keycloak:
+  #   build: ./keycloak
+  #   container_name: keycloak_projet
