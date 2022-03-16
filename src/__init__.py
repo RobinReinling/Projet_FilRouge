@@ -17,13 +17,15 @@ def init_app() -> Flask:
     mysql = MySQL(app) 
 
 #   page d'accueil du site permettant de ce connecter
+    @app.route("/")
     @app.route("/accueil", methods =['GET', 'POST'])
     def index():
+        msg = ""
         if request.method == 'POST' and 'email' in request.form and 'password' in request.form: 
           email = request.form['email'] 
           password = request.form['password'] 
           cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
-          cursor.execute('SELECT * FROM employe WHERE Adresse_mail = % s AND Password = % s', (email, password, )) 
+          cursor.execute('SELECT * FROM employe WHERE Adresse_mail = % s AND Password = % s', (email, password )) 
           account = cursor.fetchone() 
           if account: 
             msg = "ça fonctionne ma gueule"
@@ -41,5 +43,10 @@ def init_app() -> Flask:
     @app.route("/questionnaire")
     def questionnaire():
         return render_template('questionnaire.html')
+
+#   page de questionnaire du site avec toute les questions
+    @app.route("/login")
+    def login():
+        return render_template('login.html')
 
     return app
