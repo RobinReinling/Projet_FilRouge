@@ -30,7 +30,7 @@ CREATE TABLE `employe` (
   `questionnaire_idquestionnaire` int NOT NULL,
   `organisation_groupe` varchar(45) NOT NULL,
   `Password` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_employe`,`organisation_groupe`),
+  PRIMARY KEY (`id_employe`),
   KEY `fk_employe_questionnaire1_idx` (`questionnaire_idquestionnaire`),
   KEY `fk_employe_organisation1_idx` (`organisation_groupe`),
   CONSTRAINT `fk_employe_organisation1` FOREIGN KEY (`organisation_groupe`) REFERENCES `organisation` (`groupe`),
@@ -64,7 +64,7 @@ CREATE TABLE `manager` (
   `questionnaire_idquestionnaire` int NOT NULL,
   `questionnaire_resultat_questionnaire_id_result_questionnaire` int NOT NULL,
   `Password` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_manager`,`organisation_groupe`),
+  PRIMARY KEY (`id_manager`),
   KEY `fk_manager_organisation1_idx` (`organisation_groupe`),
   KEY `fk_manager_questionnaire1_idx` (`questionnaire_idquestionnaire`,`questionnaire_resultat_questionnaire_id_result_questionnaire`),
   CONSTRAINT `fk_manager_organisation1` FOREIGN KEY (`organisation_groupe`) REFERENCES `organisation` (`groupe`),
@@ -171,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-11 15:07:42
+-- Dump completed on 2022-03-17 12:13:22

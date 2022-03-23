@@ -18,17 +18,18 @@
     </div>
     <p class="choose-email">Ou utiliser mon adresse e-mail :</p>
     
-    <div class="inputs" >
+    <div class="inputs">
+      <form action="{{ url_for('index')}}" method="post" autocomplete="off"> 
       <input type="email" id="email" placeholder="Email" />
-      <input type="password" id="password" placeholder="Mot de passe">
+      <input type="password" id="password" placeholder="Mot de passe" autocomplete="on">
     </div>
     
-    <form action="{{ url_for('index')}}" method="post" autocomplete="off"> 
     <p class="inscription">Je n'ai pas de compte. <a class="worddark" href="{{url_for('inscription')}}"><span>Je m'en crée un</span></a></p>
 
     <div align="center">
       <button type="submit">Se connecter</button>
     </div>
-  </form>
+     
+  </form> 
 </body>
 </html>

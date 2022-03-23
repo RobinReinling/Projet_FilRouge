@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/styles/questionnaire1.style.css">
+    <link rel="stylesheet" href="../static/styles/questionnaire.style.css">
+    <link rel="stylesheet" href="../static/styles/questionnairee.style.css">
+    <link rel="stylesheet" href="../static/styles/pagination.style.css">
+    <script async src="../static/scripts/scriptquestionnaire.js"></script>
+</head>
+<body>
+    <!-- <h2>Bienvenue sur le site de ROROTHIER</h2> -->
+    <div class="dates"><input  type="date"></div>
+    
+    <div class="form">
+    <h1 class="label">Merci de bien vouloir remplir le formulaire suivant :</h1>
+
+    <h2>Evaluation de satisfaction</h2>
+    <h3>Vous et votre fonction, vos comptetences : </h3>
+    <p>Avez-vous l’impression que votre travail contribue à l’effort de l’entreprise ?</p>
+        <div>
+            <input name="question1" id="question1" type="range" value="1" min="0" max="10" step="1" oninput="this.nextElementSibling.value = this.value"/>
+            <output id="rangevalue1">1</output>
+        </div>
+
+    <h4>Vous et votre entreprise : </h4>
+        <p>Ressentez-vous un intérêt à être là et non ailleurs ?</p>
+            <div>
+                <input name="question2" id="question2" type="range" value="1" min="0" max="10" step="1" oninput="this.nextElementSibling.value = this.value"/>
+                <output id="rangevalue2">1</output>
+            </div>
+
+    <h5>Vous et votre équipe : </h5>
+        <p>Avez-vous le sentiment que vos collègues interfèrent dans l’accomplissement de votre travail ?</p>
+            <div>
+                <input name="question3" id="question3" type="range" value="1" min="0" max="10" step="1" oninput="this.nextElementSibling.value = this.value"/>
+                <output id="rangevalue3">1</output>
+            </div>        
+
+</body>
+
+<footer>
+    <p>
+        <a href="../templates/questionnaire1.html">1</a>
+        <a href="../templates/questionnaire2.html">2</a>
+        <a href="../templates/questionnaire3.html">3</a>
+        <a href="../templates/questionnaire4.html">4</a>
+        <a href="../templates/questionnaire5.html">5</a>
+    </p>
+</footer>
+
+</html>
