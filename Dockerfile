@@ -5,7 +5,9 @@ ENV SRV_DEBUG=True
 ENV SRV_HOST=0.0.0.0
 ENV SRV_PORT=80
 ENV FLASK_APP=app
-ENV DB_STRING=mysql+pymysql://root:root@mysql:3306/bdd_projet
+ENV DB_STRING=mysql://root:root@host.docker.internal/app
+
+RUN apt-get update && apt-get upgrade -y
 
 WORKDIR /app
 

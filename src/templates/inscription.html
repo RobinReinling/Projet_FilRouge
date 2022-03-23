@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form>
+  <form action="{{url_for('inscription')}}" method="post">
         <div align="center">
            <a href="{{url_for('index')}}">Revenir à la page de connexion</a>
         </div>
@@ -18,25 +18,19 @@
         <h1>Formulaire d'inscription</h1>
         <p class="choose-email">Pour accéder au site, veuillez remplir le formulaire ci dessous : </p>
 
-        
         <div class="inputs">
-          <input type="prenom" id="prenom" placeholder="Votre prénom*">
-          <input type="Nom" id="nom" placeholder="Votre nom*">
-          <input type="email" id="email" placeholder="Email*">
-          <input type="telephone" id="telephone" placeholder="06 XX XX XX XX">
-          <input type="entreprise" id="entreprie" placeholder="Nom de votre société*">
-          <input type="pays" id="pays" placeholder="Pays*">
-          <input type="password" id="password" placeholder="Mot de passe*">
-          <input type="password" id="confpassword" placeholder="Confirmez votre mot de passe*">
+          <input type="prenom" name="prenom" id="prenom" placeholder="Votre prénom*">
+          <input type="nom" name="nom" id="nom" placeholder="Votre nom*">
+          <input type="email" name="email" id="email" placeholder="Email*">
+          <input type="password" name="password" id="password" placeholder="Mot de passe*" autocomplete="on">
+          <input type="password" name="confpassword" id="confpassword" placeholder="Confirmez votre mot de passe*" autocomplete="on">
         </div>
         <p class="champs">* : champs obligatoire </p>
 
-        
 
         <div align="center">
-          <button type="submit">Je crée mon compte</button>
+          <button type="submit" id="bouton">Je crée mon compte</button>
         </div>
-    </form>
-    
+  </form>
 </body>
 </html>
